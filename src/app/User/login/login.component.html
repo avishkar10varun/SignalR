@@ -1,0 +1,78 @@
+<div class="card" style="margin-bottom: 50px;">
+  <div class="card-header" style="text-align: center;">
+    <h3>{{'Login.MainHeading' | translate}}</h3>
+  </div>
+</div>
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" template="<img src='assets/Images/spinner.gif' /> ">
+  <p style="color: white"></p>
+</ngx-spinner>
+<form [formGroup]="LoginForm">
+  <div class="content-top-row content-top-row-order-processing">
+    <mat-form-field appearence='fill' class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+      style="width: 100%; margin-left: 0px;">
+      <mat-label>{{'Login.UserName.label' | translate}}</mat-label>
+      <input type="email" matInput formControlName="UserName" name="UserName" placeholder="{{'Login.UserName.PlaceHolder' | translate}}">
+      <mat-error *ngIf="this.LoginForm.get('UserName').hasError('required')">{{'Login.UserName.Error.Required' | translate}}</mat-error>
+      <mat-error *ngIf="this.LoginForm.get('UserName').hasError('pattern')">{{'Login.UserName.Error.Pattern' | translate}}</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="content-top-row content-top-row-order-processing">
+    <mat-form-field appearence='fill' class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+      style="width: 100%; margin-left: 0px;">
+      <mat-label>{{'Login.Password.label' | translate}}</mat-label>
+      <input type="password" matInput formControlName="Password" name="Password" placeholder="{{'Login.Password.PlaceHolder' | translate}}">
+      <mat-error style="padding: 0px 0px 5px 10px;">{{'Login.Password.Error' | translate}}</mat-error>
+    </mat-form-field>
+  </div>
+  <!-- <div class="d-flex justify-content-between align-items-center">
+    <button type="button" mat-button class="btn-base btn-simple" (click)="ResetPassword()"><span
+        style="color: red;">Forgot Password?</span></button>
+  </div> -->
+  <div class="content-top-row content-top-row-order-processing" style="margin-top: 20px;">
+    <div class="example-button-container" style="margin-left: 60%;">
+      <button style="margin-right: 10px;" mat-fab color="accent" aria-label="Example icon button with a bookmark icon"
+        tooltipPosition="top" [disabled]="!LoginForm.valid" (click)="LoginUser()">
+        <i class="fas fa fa-save" style="font-size: 15px; color: #fff;"></i>
+      </button>
+      <button mat-fab color="warn" aria-label="Example icon button with a bookmark icon" matTooltip="Cancel "
+        tooltipPosition="top" (click)="closeDialog()">
+        <i [class]="'fa fa-times'" [ngStyle]="{'color': '#fff'}"></i>
+      </button>
+    </div>
+  </div>
+</form>
+
+<ng-template #displayResetPasswordModal>
+  <div mat-dialog-title>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="card" style="margin-bottom: 0px; width: 100%;">
+        <div class="card-header" style="text-align: center;">
+          <h3></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-dialog-content>
+    <form [formGroup]="ResetForm">
+      <div class="content-top-row content-top-row-order-processing">
+        <mat-form-field appearence='fill' class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+          style="width: 100%; margin-left: 0px;">
+          <mat-label>{{'Login.ResetAccount.UserName.label' | translate}}</mat-label>
+          <input type="email" matInput formControlName="UserName" name="UserName" placeholder="{{'Login.ResetAccount.UserName.PlaceHolder' | translate}}">
+          <mat-error *ngIf="this.ResetForm.get('UserName').hasError('required')">{{'Login.ResetAccount.UserName.Error.Required' | translate}}</mat-error>
+          <mat-error *ngIf="this.ResetForm.get('UserName').hasError('pattern')">{{'Login.ResetAccount.UserName.Error.Pattern' | translate}}</mat-error>
+        </mat-form-field>
+      </div>
+      <button mat-flat-button color="accent" [disabled]="!ResetForm.valid" class="btn-accent btn-lg submit-btn"
+        style="width: 100%;margin-top: 0px;" (click)="SendVarificationCode()">
+        {{'Login.ResetAccount.ResetButton' | translate}}
+      </button>
+    </form>
+  </mat-dialog-content>
+  <footer class="sticky-modal-footer">
+    <button type="button" mat-button class="btn-base btn-simple backBtn" (click)="BackBtn()">
+      <span>{{'Login.ResetAccount.BackButton' | translate}}</span>
+    </button>
+  </footer>
+</ng-template>

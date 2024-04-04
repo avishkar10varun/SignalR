@@ -1,0 +1,186 @@
+{
+  "data":[
+      {
+          "Name":"Group 1",
+          "Remarks":"Remark for Javed Group",
+          "Department": "Department 1",
+          "Description": "Javed Group in Dept 1"
+      },
+      {
+        "Name":"Group 2",
+        "Remarks":"Remark for ABC Company",
+        "Department": "Department 2",
+        "Description": "ABC Company in Dept 2"
+      },
+      {
+        "Name":"Group 3",
+        "Remarks":"Remark for Javed Group",
+        "Department": "Department 1",
+        "Description": "Javed Group in Dept 1"
+      },
+      {
+        "Name":"Group 4",
+        "Remarks":"Remark for ABC Company",
+        "Department": "Department 2",
+        "Description": "ABC Company in Dept 2"
+      },
+      {
+        "Name":"Group 5",
+        "Remarks":"Remark for JK Group",
+        "Department": "Department 3",
+        "Description": "JK Group in Dept 3"
+      },
+      {
+        "Name":"Group 6",
+        "Remarks":"Remark for JK Group",
+        "Department": "Department 3",
+        "Description": "JK Group in Dept 3"
+      },
+      {
+          "Name":"Group 1",
+          "Remarks":"Remark for Javed Group",
+          "Department": "Department 1",
+          "Description": "Javed Group in Dept 1"
+      },
+      {
+        "Name":"Group 2",
+        "Remarks":"Remark for ABC Company",
+        "Department": "Department 2",
+        "Description": "ABC Company in Dept 2"
+      },
+      {
+        "Name":"Group 3",
+        "Remarks":"Remark for Javed Group",
+        "Department": "Department 1",
+        "Description": "Javed Group in Dept 1"
+      },
+      {
+        "Name":"Group 4",
+        "Remarks":"Remark for ABC Company",
+        "Department": "Department 2",
+        "Description": "ABC Company in Dept 2"
+      },
+      {
+        "Name":"Group 5",
+        "Remarks":"Remark for JK Group",
+        "Department": "Department 3",
+        "Description": "JK Group in Dept 3"
+      },
+      {
+        "Name":"Group 6",
+        "Remarks":"Remark for JK Group",
+        "Department": "Department 3",
+        "Description": "JK Group in Dept 3"
+      },
+      {
+          "Name":"Group 1",
+          "Remarks":"Remark for Javed Group",
+          "Department": "Department 1",
+          "Description": "Javed Group in Dept 1"
+      },
+      {
+        "Name":"Group 2",
+        "Remarks":"Remark for ABC Company",
+        "Department": "Department 2",
+        "Description": "ABC Company in Dept 2"
+      },
+      {
+        "Name":"Group 3",
+        "Remarks":"Remark for Javed Group",
+        "Department": "Department 1",
+        "Description": "Javed Group in Dept 1"
+      },
+      {
+        "Name":"Group 4",
+        "Remarks":"Remark for ABC Company",
+        "Department": "Department 2",
+        "Description": "ABC Company in Dept 2"
+      },
+      {
+        "Name":"Group 5",
+        "Remarks":"Remark for JK Group",
+        "Department": "Department 3",
+        "Description": "JK Group in Dept 3"
+      },
+      {
+        "Name":"Group 6",
+        "Remarks":"Remark for JK Group",
+        "Department": "Department 3",
+        "Description": "JK Group in Dept 3"
+      },
+      {
+          "Name":"Group 1",
+          "Remarks":"Remark for Javed Group",
+          "Department": "Department 1",
+          "Description": "Javed Group in Dept 1"
+      },
+      {
+        "Name":"Group 2",
+        "Remarks":"Remark for ABC Company",
+        "Department": "Department 2",
+        "Description": "ABC Company in Dept 2"
+      },
+      {
+        "Name":"Group 3",
+        "Remarks":"Remark for Javed Group",
+        "Department": "Department 1",
+        "Description": "Javed Group in Dept 1"
+      },
+      {
+        "Name":"Group 4",
+        "Remarks":"Remark for ABC Company",
+        "Department": "Department 2",
+        "Description": "ABC Company in Dept 2"
+      },
+      {
+        "Name":"Group 5",
+        "Remarks":"Remark for JK Group",
+        "Department": "Department 3",
+        "Description": "JK Group in Dept 3"
+      },
+      {
+        "Name":"Group 3",
+        "Remarks":"Remark for Javed Group",
+        "Department": "Department 1",
+        "Description": "Javed Group in Dept 1"
+      },
+      {
+        "Name":"Group 4",
+        "Remarks":"Remark for ABC Company",
+        "Department": "Department 2",
+        "Description": "ABC Company in Dept 2"
+      },
+      {
+        "Name":"Group 5",
+        "Remarks":"Remark for JK Group",
+        "Department": "Department 3",
+        "Description": "JK Group in Dept 3"
+      },
+      {
+        "Name":"Group 3",
+        "Remarks":"Remark for Javed Group",
+        "Department": "Department 1",
+        "Description": "Javed Group in Dept 1"
+      },
+      {
+        "Name":"Group 4",
+        "Remarks":"Remark for ABC Company",
+        "Department": "Department 2",
+        "Description": "ABC Company in Dept 2"
+      },
+      {
+        "Name":"Group 5",
+        "Remarks":"Remark for JK Group",
+        "Department": "Department 3",
+        "Description": "JK Group in Dept 3"
+      },
+      {
+        "Name":"Group 6",
+        "Remarks":"Remark for JK Group",
+        "Department": "Department 3",
+        "Description": "JK Group in Dept 3"
+      }
+
+    ]
+
+}

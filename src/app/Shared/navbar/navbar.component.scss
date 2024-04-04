@@ -1,0 +1,224 @@
+.main-bar{
+  background-color: #ff0000 !important;
+  display: flow-root;
+  margin-left: 30px;
+
+}
+
+#check{
+  display: none;
+}
+
+.logo-header{
+  float: left;
+  margin-left: -20px;
+  padding: 0;
+  color: #000000;
+  margin: 0;
+  width: 160px;
+  height: 70px;
+  z-index: 9;
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  box-shadow: inset 0px 0px 10px rgba(253, 37, 37, 0.5);
+
+}
+
+.logo-header a{
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 70px;
+  text-decoration: none;
+  font-style: italic;
+}
+
+.logo-text{
+  font-weight: 10;
+  font-style: italic;
+}
+
+ul{
+  float: right;
+  margin-left: 100px;
+}
+
+nav ul li{
+  display: inline-block;
+  margin-top: 20px;
+  justify-content: end;
+  border-radius: 10px;
+}
+
+nav li.active a{
+  margin-top: 10px;
+  color: #020101;
+  //background-color: #ffffff;
+  border-radius: 10px;
+  border-bottom: 2px solid white;
+  color: white;
+}
+
+nav li a{
+  padding: 8px 20px;
+  border: 0;
+  margin-bottom: 8px;
+  margin-left: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 1;
+  text-decoration: none;
+  transition: all 0.5s;
+  border-radius: 10px;
+
+}
+
+button{
+  color: #fff;
+  font-size: 35px;
+
+  mat-icon{
+      padding: 5px;
+      font-size: 30px;
+  }
+}
+
+nav li:hover a {
+  color: #020101;
+  // background-color: #ffffff;
+  border-radius: 15px;
+  border-bottom: 2px solid white;
+  color: #005803;
+}
+
+
+.checkbtn span{
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  border-radius: 1px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0);
+  transition: 0.25s ease-in-out;
+}
+
+.checkbtn{
+  float: right;
+  width: 20px;
+  height: 18px;
+  position: relative;
+  transform: rotate(0);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  top: 25px;
+  display: none;
+}
+
+.checkbtn span:nth-child(1){
+  top: 0;
+}
+
+.checkbtn span:nth-child(2){
+  top: 7px;
+}
+.checkbtn span:nth-child(3){
+  top: 14px;
+}
+
+
+// Break Point 
+@media(max-width: 1240px){
+
+  .checkbtn{
+      display: block;
+      margin-right: 40px;
+
+  }
+
+  button{
+      mat-icon{
+          margin-top: 0;
+          margin-left: 150px;
+      }
+  }
+
+
+  nav ul{
+      position: fixed;
+      width: 300px;
+      height: 100vh;
+      margin-left: 10px;
+      background: #ff0606;
+      top: 50px;
+      left: -130%;
+      text-align: center;
+      transition: all 0.5s;     
+  }
+
+  nav ul a{
+      display: block;
+      margin: 5px 80px;
+      line-height: 25px;
+      color: #000000;
+
+  }
+
+  nav ul a:hover{
+      background-color: #ffffff;
+  }
+
+  .checkbtn{
+    position: absolute;
+    margin-left: 84%;
+  }
+
+  #check:checked ~ ul{
+      left: 0;
+      width: 330px;
+      margin: 0;
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.ul-link{
+  font-size: 13px;
+  margin-left: 3px;
+}
+.logoutBtn{
+  font-size: 15px;
+  margin-left: 10px;
+  color: #fff;
+  width: 50px;
+  background-color: red;
+  border-color: red;
+}
+.logoutBtn:hover{
+  background-color: white;
+  color: red;
+  border-radius: 50px;
+}
+.manu-btn{
+  background-color: red;
+  color: white;
+  font-size: 20px;
+}
+
+.manu-btn:hover{
+  background-color: white;
+  color: red;
+}

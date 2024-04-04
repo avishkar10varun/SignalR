@@ -1,0 +1,237 @@
+<div class="container">
+    <h2 class="align-center">{{'Home.title' | translate}}</h2>
+    <div class="Process-flow">
+        <img src='../../../assets/Images/BankCreditCardProcess.png' />
+    </div>
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" template="<img src='assets/Images/spinner.gif' /> ">
+        <p style="color: white"></p>
+    </ngx-spinner>
+    <div class="row row-dt">
+        <div class="col-lg-7 col-md-12 form-data">
+            <form [formGroup]="LoanFrom">
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <mat-label>{{'Home.FinancingAmount.label' | translate}}</mat-label>
+                        <input type="number" matInput (keypress)="keyPressNumbers($event)" formControlName="FinancingAmount"
+                            placeholder="{{'Home.FinancingAmount.PlaceHolder' | translate}}">
+                        <mat-error style="padding: 0px 0px 5px 10px;">{{'Home.FinancingAmount.Error' | translate}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <input type="text" matInput placeholder="{{'Home.Product.PlaceHolder' | translate}}" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <mat-label>{{'Home.PurposeofUsageId.label' | translate}}</mat-label>
+                        <mat-select formControlName="PurposeofUsageId">
+                            <mat-option style="text-align: center;">{{'Home.PurposeofUsageId.Option' | translate}}
+                            </mat-option>
+                            <mat-option *ngFor="let p of PurposeDDL" [value]="p.value">{{p.text}} </mat-option>
+                        </mat-select>
+                        <mat-error>{{'Home.PurposeofUsageId.Error' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing" style="width: 30%;">
+                        <mat-label>{{'Home.Title.label' | translate}}</mat-label>
+                        <mat-select formControlName="Title">
+                            <mat-option style="text-align: center;">{{'Home.Title.Option' | translate}}</mat-option>
+                            <mat-option value="Miss"> Miss </mat-option>
+                            <mat-option value="Mrs"> Mrs </mat-option>
+                            <mat-option value="Mr"> Mr </mat-option>
+                        </mat-select>
+                        <mat-error>{{'Home.Title.Error' | translate}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 68%; margin-right: 10px;">
+                        <mat-label>{{'Home.Name.label' | translate}}</mat-label>
+                        <input type="text" matInput formControlName="Name"
+                            placeholder="{{'Home.Name.PlaceHolder' | translate}}">
+                        <mat-error style="padding: 0px 0px 5px 10px;">{{'Home.Name.Error' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <mat-label>{{'Home.NewICNo.label' | translate}}</mat-label>
+                        <input type="number" formControlName="NewICNo" matInput
+                            placeholder="{{'Home.NewICNo.PlaceHolder' | translate}}">
+                        <mat-error style="padding: 0px 0px 5px 10px;">{{'Home.NewICNo.Error' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <mat-label>{{'Home.Email.label' | translate}}</mat-label>
+                        <input type="email" formControlName="Email" matInput
+                            placeholder="{{'Home.Email.PlaceHolder' | translate}}">
+                        <mat-error *ngIf="this.LoanFrom.get('Email').hasError('required')">{{'Home.Email.Error.required'
+                            | translate}}</mat-error>
+                        <mat-error *ngIf="this.LoanFrom.get('Email').hasError('pattern')">{{'Home.Email.Error.pattern' |
+                            translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <mat-label>{{'Home.Phone.label' | translate}}</mat-label>
+                        <input type="number" formControlName="Phone" matInput
+                            placeholder="{{'Home.Phone.PlaceHolder' | translate}}">
+                        <mat-error style="padding: 0px 0px 5px 10px;">{{'Home.Phone.Error' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <!-- <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <mat-label>How did you know about One Tranzact?</mat-label>
+                        <mat-select formControlName="ReferenceInfoId">
+                            <mat-option style="text-align: center;">Select One</mat-option>
+                            <mat-option *ngFor="let r of RefernceInfoDDL" [value]="r.value"> {{r.text}} </mat-option>
+                        </mat-select>
+                        <mat-error>Is Required</mat-error>
+                    </mat-form-field>
+                </div> -->
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <mat-label>{{'Home.StateId.label' | translate}}</mat-label>
+                        <mat-select formControlName="StateId">
+                            <mat-option style="text-align: center;">{{'Home.StateId.Option' | translate}}</mat-option>
+                            <mat-option *ngFor="let s of StateDDL" [value]="s.value"> {{s.text}} </mat-option>
+                        </mat-select>
+                        <mat-error>{{'Home.StateId.Error' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <h3>{{'Home.AttachmentTitle' | translate}}</h3>
+                <div class="mb-3 mt-3">
+                    <label>{{'Home.KadICFront.label' | translate}}</label>
+                    <input type="file" formControlName="KadICFront" class="form-control uplaoded-box"
+                        (change)="onKadICFrontFileChanged($event)">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label>{{'Home.KadICBack.label' | translate}}</label>
+                    <input type="file" formControlName="KadICBack" class="form-control uplaoded-box"
+                        (change)="onKadICBackFileChanged($event)">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label>{{'Home.PaySlipMonth.label' | translate}}</label>
+                    <input type="file" formControlName="PaySlipMonth" class="form-control uplaoded-box" multiple
+                        (change)="onPaySlipMonthFileChanged($event)">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label>{{'Home.BankStatementMonth.label' | translate}}</label>
+                    <input type="file" formControlName="BankStatementMonth" class="form-control uplaoded-box"
+                        (change)="onBankStatementMonthFileChanged($event)">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label>{{'Home.LatestEPF.label' | translate}}</label>
+                    <input type="file" formControlName="LatestEPF" class="form-control uplaoded-box"
+                        (change)="onLatestEPFFileChanged($event)">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label>{{'Home.Bill_File.label' | translate}}</label>
+                    <input type="file" formControlName="Bill_File" class="form-control uplaoded-box"
+                        (change)="onBill_FileFileChanged($event)">
+                </div>
+                <button mat-flat-button color="warn" class="submitBtn" (click)="SubmitForm()"
+                    [disabled]="!LoanFrom.valid">{{'Home.Button' | translate}}</button>
+            </form>
+            <h3>{{'Home.Eligibility.Title' | translate}}</h3>
+            <ol>
+                <li>{{'Home.Eligibility.ol.li.1' | translate}}</li>
+                <li>{{'Home.Eligibility.ol.li.2' | translate}}</li>
+                <li>{{'Home.Eligibility.ol.li.3' | translate}}</li>
+                <li>{{'Home.Eligibility.ol.li.4' | translate}}</li>
+                <li>{{'Home.Eligibility.ol.li.5' | translate}}</li>
+            </ol>
+            <h3>{{'Home.FeesCharges.Title' | translate}}</h3>
+            <ol>
+                <li>{{'Home.FeesCharges.ol.li.1' | translate}}</li>
+                <li>{{'Home.FeesCharges.ol.li.2' | translate}}</li>
+                <li>{{'Home.FeesCharges.ol.li.3' | translate}}</li>
+                <li>{{'Home.FeesCharges.ol.li.4' | translate}}</li>
+            </ol>
+            <h3>{{'Home.ProfitMargin.Title' | translate}}</h3>
+            <p>{{'Home.ProfitMargin.p' | translate}}</p>
+        </div>
+        <div class="col-lg-5 col-md-12">
+            <!-- <div class="sidebar sidebar--calculators">
+                <div class="widget calculator calculator--payment-simulation" id="payment-simulation">
+                    <h3 class="section__title">{{'Home.PaymentSimulation.Title' | translate}}</h3>
+                    <div class="calculator__form">
+                        <form>
+                            <div class="reset-value" title="reset">{{'Home.PaymentSimulation.ResetButton' | translate}}
+                            </div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="calculator__label">{{'Home.PaymentSimulation.calculator_label_1' |
+                                            translate}}</td>
+                                        <td class="calculator__value">
+                                            <input id="loan-amount" type="number" name="loan-amount" value=""
+                                                class="validate[required]" min="1000" max="50000" step="50"
+                                                placeholder="1,000 - 50,000">
+                                            <div class="alert--message range">
+                                                {{'Home.PaymentSimulation.calculator_Range' | translate}}</div>
+                                            <div class="alert--message required">
+                                                {{'Home.PaymentSimulation.calculator_Required' | translate}}</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="calculator__label">{{'Home.PaymentSimulation.calculator_label_2' |
+                                            translate}}</td>
+                                        <td class="calculator__value">
+                                            <input readonly="" id="interest-rate" type="text" name="interest-rate"
+                                                value="18" class="validate[required]" required="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="calculator__label">{{'Home.PaymentSimulation.calculator_label_3' |
+                                            translate}}</td>
+                                        <td class="calculator__value range">
+                                            <input id="loan-period" type="range" name="loan-period" value="1"
+                                                class="validate[required] slider" required="" min="1" max="5">
+                                            <span id="loan-period--value">1</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="calculator__action">
+                                <button type="button" value="Calculate" class="button button--l immediate-calc">
+                                    {{'Home.PaymentSimulation.calculatorBtn' | translate}}
+                                </button>
+                            </div>
+
+
+                            <div class="calculator__monrepay">
+                                <div class="calculator__monrepay--wrapper">
+                                    <div class="calculator__monrepay--title"> {{'Home.calculator_monrepay_Title' |
+                                        translate}}</div>
+                                    <div class="calculator__monrepay--value"></div>
+                                </div>
+                                <button type="submit" value="Diagnose"
+                                    class="button button--l">{{'Home.calculator_monrepay_Detail' | translate}}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="main-bar">
+  <nav>
+    <input type="checkbox" id="check" />
+    <label for="check" class="checkbtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <div class="logo-header">
+        <a >One <span class="logo-text">Tranzact</span></a>
+    </div>
+
+    <ul>
+      <li class="active"><a routerLink="/MasterHome">{{'Navbar.Home' | translate }}</a></li>
+      <li ><a routerLink="/Empty">{{'Navbar.ApplyNow' | translate }}</a></li>
+      <li><a routerLink="/Empty">{{'Navbar.Inquiry' | translate }}</a></li>
+      <li class="active"><a routerLink="/Empty">{{'Navbar.PayNow' | translate }}</a></li>
+      <li><a routerLink="/Individual">{{'Navbar.Individual' | translate }}</a></li>
+      <li><a routerLink="/Business/BusinessForm">{{'Navbar.Business' | translate }}</a></li>
+      <li *ngIf = "UserService.roleMatch(['Admin'])">
+        <a [matMenuTriggerFor]="user" >{{'Navbar.User' | translate }}</a>
+      </li>
+      <li><a (click)="LoginDialog()" *ngIf="!LogoutBtn">Login</a></li>
+      <button mat-icon-button>
+        <mat-icon [matMenuTriggerFor]="Lang" >language</mat-icon>
+      </button>
+      <button mat-icon-button (click) = "Logout()" *ngIf="LogoutBtn">
+        <i class="fas fa-power-off" style="font-size: 25px; margin: 10px 0px 0px 25px; color: white;"></i>
+      </button>
+  </ul>
+
+  </nav>
+</div>
+
+<mat-menu #menu="matMenu" class="customize">
+  <button routerLink="/Individual" mat-menu-item class="manu-btn">{{'Navbar.ApplyIFUND.Individual' | translate }}</button>
+  <button routerLink="/Business/BusinessForm" mat-menu-item class="manu-btn">{{'Navbar.ApplyIFUND.Business' | translate }}</button>
+</mat-menu>
+
+<mat-menu #Lang="matMenu" class="customize">
+  <button  mat-menu-item class="manu-btn" (click)="useLanguage('en')"> {{'Navbar.language.English' | translate}}</button>
+  <button  mat-menu-item class="manu-btn" (click)="useLanguage('ml')"> {{'Navbar.language.Malaysia' | translate}}</button>
+</mat-menu>
+
+<mat-menu #user="matMenu" class="customize">
+  <button  mat-menu-item class="manu-btn" routerLink="/User/UserList">{{'Navbar.User.UsersList' | translate}}</button>
+  <button  mat-menu-item class="manu-btn" routerLink="/User/Role">{{'Navbar.User.Roles' | translate}}</button>
+  <button  mat-menu-item class="manu-btn" routerLink="/User/ContactUsList">ContactUsForms</button>
+  <button  mat-menu-item class="manu-btn" routerLink="/User/IndividaulListFroms"> {{'Navbar.User.IndividualForms' | translate}} </button>
+  <button  mat-menu-item class="manu-btn" routerLink="/User/BusinessListForm"> {{'Navbar.User.BusinessForms' | translate}} </button>
+</mat-menu>

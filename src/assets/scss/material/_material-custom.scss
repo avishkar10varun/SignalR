@@ -1,0 +1,36 @@
+// mat-checckbox
+.mat-checkbox-layout {
+  .mat-checkbox-label {
+    font-size: 12px;
+    line-height: 24px;
+  }
+}
+
+// mat form field
+.field-fill {
+  &.mat-form-field-appearance-fill {
+    .mat-form-field-underline {
+      display: none;
+    }
+    .mat-form-field-flex {
+      background-color: transparent;
+      border: 1px solid $main-border-light-color;
+      border-radius: 10px;
+    }
+    .mat-form-field-label {
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 14px;
+      color: $text-color-light;
+    }
+    .mat-input-element {
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 18px;
+      color: $grey-main;
+    }
+    textarea {
+      resize: none;
+    }
+  }
+}

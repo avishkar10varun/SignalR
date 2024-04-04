@@ -1,0 +1,80 @@
+.ant-picker {
+    border-radius: 0.5rem !important;
+    align-items: flex-end !important;
+    margin-left: 20px !important;
+    border: 1px solid #e8eaef !important;
+  }
+  .ngdatepickercustom{
+    width: 100% !important;
+    margin-left: 0px !important;
+  }
+  .inputField {
+    position: relative;
+    // margin-top: 15px;
+  }
+  
+  .inputField .calender-input{
+    padding: 8px 20px;
+    padding-top: 18px;
+    color: black;
+  }
+  
+  .inputField .calender-input:focus {
+    border: 1.8px solid #1d252c;
+    outline: none;
+  }
+  
+  .inputField .floating-text {
+    pointer-events: none;
+    opacity: 0.5;
+    position: absolute;
+    padding-left: 20px;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: text;
+  }
+  
+  .inputField .calender-input:focus+.floating-text,
+  .inputField .calender-input:not(:placeholder-shown)+.floating-text {
+    font-weight: 800;
+    color: #000;
+    left: 9px;
+    top: 7px;
+    -webkit-transform: scale(0.7) translateY(-10%) translateX(-8.5px);
+    transform: scale(0.7) translateY(-10%) translateX(-8.5px);
+  }
+
+  .inputField .calender-clear{
+    padding: 8px 20px;
+    padding-top: 18px;
+    color: black;
+  }
+  
+  .inputField .calender-clear:focus {
+    border: 1.8px solid #1d252c;
+    outline: none;
+  }
+  
+  .inputField .floating-text {
+    pointer-events: none;
+    opacity: 0.5;
+    position: absolute;
+    padding-left: 20px;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: text;
+  }
+  
+  .inputField .calender-clear:focus+.floating-text,
+  .inputField .calender-clear:not(:placeholder-shown)+.floating-text {
+    font-weight: 800;
+    color: #000;
+    left: 9px;
+    top: 7px;
+    -webkit-transform: scale(0.7) translateY(-10%) translateX(-8.5px);
+    transform: scale(0.7) translateY(-10%) translateX(-8.5px);
+  }

@@ -1,0 +1,44 @@
+.row{
+  width: 100%;
+}
+.UserImag{
+  margin: 25px 10% 10% 10%;
+  border: 1px solid;
+  border-color: red;
+  width: 90%;
+  height: 90%;
+}
+
+.mat-form-field{
+    background-color: white;
+    color: black;
+    border:1px solid #e8eaef;
+    text-decoration: none;
+    border-radius: 10px;
+    height: 60px;
+  }
+  table{
+    width: 100%;
+  }
+  .inputs{
+    margin-left: 20px;
+    width: 80%;
+   }
+   ::ng-deep .custom-tooltip{
+    background-color:#1f2c2c;
+    font-size: 15px;
+    box-shadow: 0px 2px #b8b2b2;
+  }
+
+  .node-create {
+    background: #10ce9c;
+  }
+
+  .card{
+    background-color: red;
+    color: white;
+  }
+
+  span{
+    color: red;
+  }

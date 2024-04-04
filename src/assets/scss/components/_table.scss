@@ -1,0 +1,149 @@
+@import "../helpers/mixins";
+// td , th {
+//   white-space: normal;
+//   word-wrap: break-word;
+//   max-width: 150px;
+// }
+.table-wrapper {
+  padding: 15px;
+}
+.basic-table {
+  td , th {
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 150px;
+}
+  width: 100%;
+  background: transparent;
+  overflow-x: scroll !important;
+  thead {
+    tr {
+      background: $th-bg-color;
+      height: 70px;
+    }
+  }
+  tbody {
+    tr {
+      height: 70px;
+      border-radius: 5px;
+      overflow:hidden;
+      @include transition(0.4);
+      &:nth-child(even) {
+        background: $tr-hover-bg;
+      }
+      &:hover {
+        transform: translateZ(0px);
+        box-shadow: 0px 6px 11px rgba(58, 175, 228, 0.15);
+      }
+    }
+  }
+  th,
+  td {
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+  th {
+    &.mat-header-cell {
+      padding: 22px;
+      padding-right: 0;
+      border: 0;
+    }
+    .header-text {
+      font-weight: bold;
+      font-size: 13px;
+      line-height: 16px;
+      color: $primary-color-1;
+    }
+  }
+  td {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: $grey-main;
+    &.mat-cell {
+      padding: 13px 22px;
+      border: 0;
+    }
+  }
+  .row-action-btns {
+    min-width: 70px;
+    // margin-left: 20px;
+    .mat-icon-button {
+      width: 34px;
+      height: 34px;
+      line-height: 34px;
+      border-radius: 10px;
+      // opacity: 0;
+      visibility: visible;
+      @include transition(0.4);
+      &.edit-btn {
+        background: $secondary-color-5;
+      }
+      &.edit-machine {
+        background: $secondary-color-4;
+      }
+      &.edit-permission {
+        background: $btn-bg-secondary;
+      }
+      &.tree-view-btn {
+        background: $secondary-color-4;
+      }
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+      &.node-delete {
+        background: $secondary-color-3;
+      }
+    }
+  }
+
+}
+.basic-paginataor {
+  .mat-paginator-page-size-select {
+    display: none;
+    .mat-form-field-infix {
+      padding: 0;
+    }
+    .mat-form-field-underline {
+      display: none;
+    }
+    span {
+      font-weight: bold;
+      font-size: 13px;
+      line-height: 20px;
+      color: $primary-color-2;
+    }
+  }
+  .mat-paginator-range-label {
+    margin: 0 5px;
+  }
+  .mat-paginator-page-size-label {
+    display: none;
+  }
+  .mat-paginator-range-actions {
+    .mat-paginator-icon {
+      width: 24px;
+    }
+    .mat-icon-button {
+      background: $white;
+      border: 1px solid $main-border-color;
+      border-radius: 10px;
+      margin-left: 8px;
+      .mat-paginator-icon {
+        width: 24px;
+      }
+      &.mat-button-disabled {
+        .mat-paginator-icon {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+// .table-overflow-scroller{
+//   overflow-x: scroll;
+// }

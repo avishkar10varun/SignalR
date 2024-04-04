@@ -1,0 +1,99 @@
+<div style="background-color: #fff;">
+    <div class="row">
+        <div class="col-2">
+            <img class="UserImag center" src='../../../assets//Images/BusinessIcons.webp' />
+        </div>
+        <div class="col-10">
+            <div class="content-top-row content-top-row-order-processing">
+                <mat-form-field
+                  appearence="fill"
+                  class="top-row-first-filed-item top-row-first-filed-item-order-processing "
+                  style="margin:0px 0px 30px 0px;width: 100%;">
+                <mat-label>{{'BusinessListForm.SearchForm' | translate}}</mat-label>
+                  <input matInput  name="Search User" (keyup) ="applyFilter($event)"/>
+                </mat-form-field>
+            </div>
+            <div style="margin: 0px 0px 0px 0px;">
+                <table mat-table class="basic-table plant-model-table"[dataSource]="dataSource" matSort>
+                    <ng-container matColumnDef="CompanyName">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header="">
+                            <p class="header-text">{{'BusinessListForm.table.CompanyName' | translate}}</p>
+                        </th>
+                        <td mat-cell *matCellDef="let element">{{element.companyName}}</td>
+                    </ng-container>
+                     <ng-container matColumnDef="CompanyRegNo">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header="">
+                            <p class="header-text">{{'BusinessListForm.table.CompanyRegNo' | translate}}</p>
+                        </th>
+                        <td mat-cell *matCellDef="let element">{{element.companyRegNo}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="Phone">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header="">
+                            <p class="header-text">{{'BusinessListForm.table.Phone' | translate}}</p>
+                        </th>
+                        <td mat-cell *matCellDef="let element">{{element.phone}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="Email">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header="">
+                            <p class="header-text">{{'BusinessListForm.table.Email' | translate}}</p>
+                        </th>
+                        <td mat-cell *matCellDef="let element">{{element.email}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="State">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header="">
+                            <p class="header-text">{{'BusinessListForm.table.State' | translate}}</p>
+                        </th>
+                        <td mat-cell *matCellDef="let element">{{element.stateName}}</td>
+                    </ng-container>
+                   <ng-container matColumnDef="FinancingAmount">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header="">
+                            <p class="header-text">{{'BusinessListForm.table.FinancingAmount' | translate}}</p>
+                        </th>
+                        <td mat-cell *matCellDef="let element">{{element.financingAmount}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="PurposeOfUse">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header="">
+                            <p class="header-text">{{'BusinessListForm.table.PurposeOfUse' | translate}}</p>
+                        </th>
+                        <td mat-cell *matCellDef="let element">{{element.purposeofUsageName}}</td>
+                    </ng-container>
+                     <!-- <ng-container matColumnDef="Action" >
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="">
+                        <p class="header-text">Action</p>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="row-action-btns-column">
+                         <div class="row-action-btns">
+                        <button mat-icon-button class="edit-btn"  aria-label="Edit Row"
+                                pTooltip="Edit User" tooltipPosition="top" (click)="editRole(element)">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path
+                                d="M0.75 9.06298V11.2505H2.9375L9.38917 4.79881L7.20167 2.61131L0.75 9.06298ZM11.0808 3.10715C11.3083 2.87965 11.3083 2.51215 11.0808 2.28465L9.71583 0.919648C9.48833 0.692148 9.12083 0.692148 8.89333 0.919648L7.82583 1.98715L10.0133 4.17465L11.0808 3.10715Z"
+                                fill="white" />
+                            </svg>
+                        </button>
+                        <button mat-icon-button  class="node-control-btn node-delete" aria-label="delete item"
+                                pTooltip="Delete User" tooltipPosition="top" (click)="deleteRole(element)">
+                                <svg width="8" height="10" viewBox="0 0 8 10" fill="none">
+                                <path
+                                    d="M7.35547 0.9375H5.60547L5.10547 0.4375H2.60547L2.10547 0.9375H0.355469V1.9375H7.35547V0.9375ZM0.855469 8.4375C0.855469 8.70272 0.960826 8.95707 1.14836 9.14461C1.3359 9.33214 1.59025 9.4375 1.85547 9.4375H5.85547C6.12069 9.4375 6.37504 9.33214 6.56258 9.14461C6.75011 8.95707 6.85547 8.70272 6.85547 8.4375V2.4375H0.855469V8.4375Z"
+                                    fill="white" />
+                                </svg>
+                        </button>
+                        </div>
+                    </td> 
+                    </ng-container> -->
+                    <tr mat-header-row *matHeaderRowDef="displayColumn"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayColumn;"></tr>
+                    <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4" style="text-align: center;">{{'BusinessListForm.table.EmptyResult' | translate}}</td>
+                    </tr>
+                </table>
+            <mat-paginator
+                class="basic-paginataor"
+                [pageSizeOptions]="[4, 10, 20]"
+                showFirstLastButtons>
+            </mat-paginator>
+            </div>
+        </div>
+    </div>
+</div>

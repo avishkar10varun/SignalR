@@ -1,0 +1,125 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+@import "../helpers/responsive";
+
+.menu-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 0 0 -25px;
+  .list-items {
+    width: calc(25% - 25px);
+    margin: 0 0 50px 25px;
+    @include desktop {
+      width: calc(33.33% - 25px);
+    }
+    @include tablet {
+      width: calc(50% - 25px);
+    }
+    @include mobile {
+      width: calc(100% - 25px);
+    }
+  }
+  .list-link {
+    position: relative;
+    display: block;
+    min-height: 145px;
+    background: $white;
+    box-shadow: 2px 2px 15px rgba(5, 5, 124, 0.14);
+    border-radius: 10px;
+    padding: 50px 30px;
+    @include transition(0.4);
+    .link-text {
+      position: relative;
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 20px;
+      color: $primary-color-1;
+      //max-width: 155px;
+      @include transition(0.4);
+      z-index: 1;
+    }
+    .link-top-box {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: -30px;
+      svg {
+        width: 100%;
+        display: block;
+      }
+      .top-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+    .link-bottom-icon {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 92px;
+      svg {
+        width: 100%;
+        display: block;
+        * {
+          @include transition(0.4);
+        }
+      }
+    }
+    &:not(.disabled):hover {
+      background: $secondary-color-2;
+      .link-text {
+        color: $white;
+      }
+      .link-bottom-icon {
+        .arrow-box {
+          fill: $primary-color-2;
+        }
+        .arrow {
+          fill: $white;
+        }
+      }
+    }
+    &.disabled {
+      pointer-events: none;
+      cursor: auto;
+      .box-bg {
+        path {
+          fill: $disabled-icon-color;
+        }
+      }
+      .link-text {
+        color: $disabled-text-color;
+      }
+      .link-bottom-icon {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+}
+.content-area {
+  &:not(.menu-collapsed) {
+    .menu-card-list {
+      .list-items {
+        @include desktop-xxl {
+          width: calc(33.33% - 25px);
+        }
+        @include desktop {
+          width: calc(50% - 25px);
+        }
+        @include tablet {
+          width: calc(50% - 25px);
+        }
+        @include mobile {
+          width: calc(100% - 25px);
+        }
+      }
+    }
+  }
+}

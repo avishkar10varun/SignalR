@@ -1,0 +1,190 @@
+
+.mar-top{
+    margin-top: 10px;
+}
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+.container{
+    margin-top: 130px;
+}
+
+.align-center{
+    margin-top: 40px;
+    align-items: center;
+    text-align: center;
+    font-family: franklin-gothic-urw, "Arial", sans-serif;
+    font-size: 2.2rem;
+    color: #ff0000;
+    font-weight: bold !important;
+    line-height: 1.2;
+}
+.Process-flow{
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #DCDCDC;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    top: unset;
+    margin: 0px auto;
+    height: auto;
+}
+.Process-flow img{
+    width: 500px;
+    margin: auto;
+    display: block;
+    height: 50%;
+    object-position: center;
+    object-fit: cover;
+}
+.container .row-dt {
+    padding: 30px 0px 20px 0px;
+}
+.container .row-dt .form-data{
+    border: 1px solid;
+    border-color: #DCDCDC;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.widget {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 30px;
+    background-color: #f1f3f3;
+    line-height: 1.2;
+}
+.widget .section__title {
+    margin: 0 0 15px;
+    color: #ff0000;
+    text-align: left;
+}
+.calculator--payment-simulation .reset-value {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 65px;
+    width: 30px;
+    height: 30px;
+    color: #adb2b3;
+    cursor: pointer;
+}
+.calculator__form table {
+    table-layout: fixed;
+    width: 100%;
+}
+.calculator__form td {
+    vertical-align: text-bottom;
+    padding-bottom: 15px;
+}
+.calculator__label {
+    max-width: 200px;
+    padding-right: 15px;
+}
+.calculator__value input, .calculator__value select {
+    position: relative;
+    width: 100%;
+    padding: 3px 8px;
+    border: 1px solid #d4e0e0;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+input {
+    font-family: franklin-gothic-urw, "Arial", sans-serif;
+}
+.calculator .alert--message.range, .calculator .alert--message.required {
+    display: none;
+    color: #ff0000;
+}
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: #ffffff00;
+    border: none;
+}
+::-webkit-resizer{
+    color: red;
+    background-color: #ff0000;
+}
+.calculator__value.range {
+    display: flex;
+    padding-right: 8px;
+}
+.calculator__value input, .calculator__value select {
+    position: relative;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+.calculator__action {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+a.button.button--l, button.button--l, input[type="submit"] {
+    padding: 15px 23px;
+    font-size: 1rem;
+}
+a.button, button, input[type="submit"] {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #ff0000;
+    border: 0;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: #ffffff;
+    line-height: 1;
+    cursor: pointer;
+}
+.calculator__monrepay {
+    display: none;
+    justify-content: space-between;
+    background: #e3e8e8;
+    width: calc(100% + 60px);
+    margin: 20px 0px -30px -30px;
+    padding: 15px 30px;
+}
+a.button.button--l, button.button--l, input[type="submit"] {
+    padding: 15px 23px;
+    font-size: 1rem;
+}
+.uplaoded-box{
+    font-size: 16px;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px black;
+    width: 100%;
+    outline: none;
+}
+::-webkit-file-upload-button{
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+}
+::-webkit-file-upload-button:hover{
+    background: black;
+}
+.submitBtn{
+    width: 130px;
+    margin: 20px 0px;
+}
+label{
+    font-size: 13px;
+}
+ol{
+    margin-bottom: 30px;
+    padding-left: 30px;
+}
+li{
+    margin-bottom: 8px;
+    padding-left: 15px;
+    font-size: 13px;
+}
+

@@ -1,0 +1,81 @@
+<div class="card" style="margin-bottom: 30px;">
+    <div class="card-header" style="text-align: center;">
+        <h3>{{'UserList.Register.MainHeading' | translate}}</h3>
+    </div>
+</div>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" template=" <img src='../../../../assets/Images/spinner.gif' />">
+    <p style="color: white"></p>
+</ngx-spinner>
+<form [formGroup]="RegisterForm">
+    <div class="content-top-row content-top-row-order-processing">
+        <input matInput formControlName="UserId" name="UserId" hidden/>
+        <mat-form-field 
+            appearence='fill'
+            class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+            style="width: 50%; margin-left: 0px;">
+            <mat-label>{{'UserList.Register.FirstName.label' | translate}}</mat-label>
+            <input type="text" matInput formControlName="FirstName" name="FirstName" placeholder="{{'UserList.Register.FirstName.PlaceHolder' | translate}}">
+            <mat-error style="padding: 0px 0px 5px 10px;">{{'UserList.Register.FirstName.Error' | translate}}</mat-error>
+        </mat-form-field>
+        <mat-form-field 
+            appearence='fill'
+            class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+            style="width: 50%; ">
+            <mat-label>{{'UserList.Register.LastName.label' | translate}}</mat-label>
+            <input type="text" matInput formControlName="LastName" name="LastName" placeholder="{{'UserList.Register.LastName.PlaceHolder' | translate}}">
+            <mat-error style="padding: 0px 0px 5px 10px;">{{'UserList.Register.LastName.Error' | translate}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="content-top-row content-top-row-order-processing">
+        <mat-form-field 
+            appearence='fill'
+            class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+            style="width: 100%;  margin-left: 0px;">
+            <mat-label>{{'UserList.Register.Email.label' | translate}}</mat-label>
+            <input type="email" matInput formControlName="Email" name="Email" placeholder="{{'UserList.Register.Email.PlaceHolder' | translate}}">
+            <mat-error *ngIf="this.RegisterForm.get('Email').hasError('required')">{{'UserList.Register.Email.Error.Required' | translate}}</mat-error>
+            <mat-error *ngIf="this.RegisterForm.get('Email').hasError('pattern')">{{'UserList.Register.Email.Error.Pattern' | translate}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="content-top-row content-top-row-order-processing">
+        <mat-form-field
+            appearence="fill"
+            class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+            style="width: 100%; margin-left: 0px;">
+            <mat-select formControlName="RoleId" placeholder="{{'UserList.Register.Role.PlaceHolder' | translate}}">
+                <mat-option style="text-align: center;">{{'UserList.Register.Role.Option' | translate}}</mat-option>
+                <mat-option *ngFor="let r of RolesDDL" [value]="r.roleId">{{r.name}}</mat-option>
+            </mat-select>
+            <mat-error style="padding: 0px 0px 5px 10px;">{{'UserList.Register.Role.Error' | translate}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="content-top-row content-top-row-order-processing">
+        <mat-form-field 
+            appearence='fill'
+            class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+            style="width: 50%; margin-left: 0px;">
+            <mat-label>{{'UserList.Register.Password.label' | translate}}</mat-label>
+            <input type="password" matInput formControlName="Password" name="Password" placeholder="{{'UserList.Register.Password.PlaceHolder' | translate}}">
+            <mat-error style="padding: 0px 0px 5px 10px;">{{'UserList.Register.Password.Error' | translate}}</mat-error>
+        </mat-form-field>
+        <mat-form-field 
+            appearence='fill'
+            class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+            style="width: 50%;">
+            <mat-label>{{'UserList.Register.ConfirmPassword.label' | translate}}</mat-label>
+            <input type="password" matInput formControlName="ConfirmPassword" name="ConfirmPassword" placeholder="{{'UserList.Register.ConfirmPassword.PlaceHolder' | translate}}">
+            <mat-error style="padding: 0px 0px 5px 10px;">{{'UserList.Register.ConfirmPassword.Error' | translate}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="content-top-row content-top-row-order-processing" style="margin-top: 40px;">
+        <div class="example-button-container" style="margin-left: 70%;">
+            <button style="margin-right: 10px;"  mat-fab color="accent" aria-label="Example icon button with a bookmark icon" tooltipPosition="top" [disabled]="!RegisterForm.valid" (click)="SaveUser()">
+                <i class="fas fa fa-save" style="font-size: 15px; color: #fff;"></i>
+            </button>
+            <button  mat-fab color="warn" aria-label="Example icon button with a bookmark icon" matTooltip="Cancel " tooltipPosition="top" (click)="closeDialog()">
+                <i [class]="'fa fa-times'"
+                [ngStyle]="{'color': '#fff'}"></i>
+            </button>
+          </div>
+        </div>
+</form>

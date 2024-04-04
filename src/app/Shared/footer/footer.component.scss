@@ -1,0 +1,128 @@
+.container{
+    padding-right: 300px;
+    position: relative;
+}
+#footer {
+    font-size: 0.9rem;
+    padding-bottom: 0;
+}
+
+.section--dark {
+    background-color: #202525;
+    color: #ffffff;
+}
+.section {
+    padding: 45px 0;
+}
+.container .footer__static{
+    position: absolute;
+    right: 0;
+    width: 200px;
+    text-align: right;
+    
+}
+.container .footer__logo{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 23px;
+    background-size: contain;
+    display: block;
+}
+
+.container .footer__social p{
+    margin: 0 0 8px
+}
+.footer__social .footer__social-instagram{
+    background-image: url(../../../assets/Images/instagram-square-brands.svg);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    background: no-repeat center;
+    background-size: contain;
+}
+@media (min-width: 782px){
+    .wp-block-columns {
+        flex-wrap: nowrap;
+    }
+}
+
+.wp-block-columns {
+    display: flex;
+}
+.wp-block-column {
+    margin: 0;
+}
+@media (min-width: 600px)
+{
+    .wp-block-column {
+        flex-basis: calc(50% - 16px);
+        flex-grow: 0;
+    }
+}
+.wp-block-column {
+    min-width: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+.footer__address:before {
+    transform: scale(1.2);
+}
+.footer__address, .footer__phone-no, .footer__licences {
+    position: relative;
+    padding-left: 30px;
+}
+
+p, li {
+    margin: 0 0 15px;
+    line-height: 1.5;
+}
+
+ .footer__licences.footer__licences--first-line {
+    margin-top: 30px;
+}
+
+.footer__licences.footer__licences--heading {
+    margin-bottom: 8px;
+}
+ .footer__address, .footer__phone-no, .footer__licences {
+    position: relative;
+    padding-left: 30px;
+}
+
+@media (min-width: 782px)
+{
+    .wp-block-column:not(:first-child) {
+        margin-left: 32px;
+    }
+}
+@media (min-width: 600px)
+{
+    .wp-block-column:nth-child(2n) {
+        margin-left: 32px;
+    }
+}
+h3 {
+    margin: 0 0 23px;
+    font-size: 1.1rem;
+}
+a.menu, .menu a {
+    color: inherit;
+    font-size: 13px;
+    text-decoration: none;
+}
+.Businesslink{
+    font-size: 25px;
+}
+.Businesslink:hover
+{
+    color: red;
+}
+
+.footer__copyright {
+    padding: 15px 0;
+    background-color: #ff0000;
+    color: #ffffff;
+    line-height: 1;
+    font-size: 12px !important;
+}

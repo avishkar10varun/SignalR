@@ -1,0 +1,189 @@
+@import "../helpers/mixins";
+.tree-controls {
+  margin-bottom: 15px;
+  .btn-tree-control {
+    padding: 5px;
+    margin-right: 10px;
+  }
+  .mat-button-wrapper {
+    display: flex;
+    // align-items: center;
+    .icon {
+      margin-right: 10px;
+      svg {
+        display: block;
+      }
+    }
+  }
+}
+.basic-tree-structure {
+  .node-invisible {
+    display: none;
+  }
+  .tree-text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: $grey-main;
+    margin: 0 15px 0 2px;
+  }
+  .tree-text-main {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $grey-main;
+  }
+  .tree-node {
+    display: block;
+    .tree-content {
+      display: flex;
+      align-items: center;
+      min-height: 42px;
+      &:hover {
+        .node-controls {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+    .tree-node {
+      padding-left: 40px;
+      width: 100%;
+    }
+  }
+  .mat-tree-node {
+    min-height: 42px;
+  }
+  .mat-icon-button {
+    svg {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .node-icon {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background: $primary-color-2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    @include transition(0.4);
+    z-index: 1;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: calc(50% - 0.5px);
+      width: 1px;
+      height: calc(150% + 2px);
+      height: 30px;
+    }
+    svg {
+      display: block;
+    }
+    &.node-open {
+      &:after {
+        background: $tree-line-color;
+      }
+    }
+  }
+  .node-controls {
+    margin-left: auto;
+    opacity: 0;
+    visibility: hidden;
+    @include transition(0.4);
+    .node-control-btn {
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      &:not(:first-child) {
+        margin-left: 15px;
+      }
+      &.node-edit {
+        background: $secondary-color-5;
+      }
+      &.node-create {
+        background: $primary-color-2;
+      }
+      &.node-delete {
+        background: $secondary-color-3;
+      }
+    }
+  }
+  .tree-tpggler {
+    svg {
+      background: $white;
+      position: relative;
+      z-index: 1;
+    }
+  }
+  .tree-tpggler,
+  .child-space-elem {
+    position: relative;
+    margin-right: 8px;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      background: $tree-line-color;
+    }
+    &:before {
+      top: calc(50% - 0.5px);
+      right: 2px;
+      width: 18px;
+      height: 1px;
+    }
+    &:after {
+      top: 20px;
+      left: calc(50% - 0.5px);
+      width: 1px;
+      height: calc(150% + 2px);
+      height: 42px;
+    }
+    &.node-open {
+      &:after {
+        height: 0;
+      }
+    }
+  }
+  .mat-tree-node {
+    &:last-child {
+      .child-space-elem {
+        &:after {
+          height: calc(75% + 2px);
+          height: 0;
+        }
+      }
+    }
+  }
+  & > .mat-nested-tree-node {
+    > .tree-node {
+      > .tree-content {
+        .tree-tpggler:after {
+          height: 0;
+        }
+      }
+    }
+  }
+  .mat-nested-tree-node {
+    &:last-child {
+      & > li {
+        & > .tree-content {
+          .tree-tpggler {
+            &:after {
+              height: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// .mat-nested-tree-node > .tree-node > .tree-content .tree-tpggler:after {
+//   // height: 30px;
+//   background: red;
+// }

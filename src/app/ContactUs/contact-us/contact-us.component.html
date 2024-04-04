@@ -1,0 +1,70 @@
+<div id="content" class="post post--page post--tabbed">
+    <div class="post__hero">
+        <img width="468" height="310"
+            src="assets/Images/ContactUs.jpg"
+            sizes="(max-width: 468px) 100vw, 468px">
+    </div>
+    <div class="container">
+        <div class="post__content show-share-buttons show-share-buttons--page">
+            <div class="tab-controls" style="font-size: 25px; font-weight: 600;color: red;">
+                {{'ContactUs.ContactForm' | translate}}
+            </div>
+            <form [formGroup]="ContactUsForm">
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 45%;margin-left: 0px;">
+                        <mat-label>{{'ContactUs.Name.label' | translate}}</mat-label>
+                        <input type="text" matInput formControlName="Name" placeholder="{{'ContactUs.Name.PlaceHolder' | translate}}">
+                        <mat-error style="padding: 0px 0px 5px 10px;">{{'ContactUs.Name.Error' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 45%;margin-left: 0px;">
+                        <mat-label>{{'ContactUs.Email.label' | translate}}</mat-label>
+                        <input type="email" matInput formControlName="Email" placeholder="{{'ContactUs.Email.PlaceHolder' | translate}}">
+                        <mat-error *ngIf="this.ContactUsForm.get('Email').hasError('required')">{{'ContactUs.Email.Error.Required' | translate}}</mat-error>
+                        <mat-error *ngIf="this.ContactUsForm.get('Email').hasError('pattern')">{{'ContactUs.Email.Error.Pattern' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 45%;margin-left: 0px;">
+                        <mat-label>{{'ContactUs.Phone.label' | translate}}</mat-label>
+                        <input type="number" matInput formControlName="Phone" placeholder="{{'ContactUs.Phone.PlaceHolder' | translate}}">
+                        <mat-error style="padding: 0px 0px 5px 10px;">{{'ContactUs.Phone.Error' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <mat-radio-group aria-label="Select an option" formControlName="Purpose">
+                    <mat-radio-button value="Financing">{{'ContactUs.Radio1' | translate}}</mat-radio-button>
+                    <mat-radio-button value="Collaboration" style="margin: 0px 6%;">{{'ContactUs.Radio2' | translate}}</mat-radio-button>
+                    <mat-radio-button value="General Inquiry">{{'ContactUs.Radio3' | translate}}</mat-radio-button>
+                </mat-radio-group>
+                <div class="content-top-row content-top-row-order-processing " style="height: 100px;">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 45%;margin-left: 0px; height: 100px;">
+                        <mat-label>{{'ContactUs.Message.label' | translate}}</mat-label>
+                        <textarea matInput formControlName="Message" placeholder="{{'ContactUs.Message.PlaceHolder' | translate}}" cols="40" rows="5" style="resize:none"></textarea>
+                        <mat-error style="padding: 0px 0px 5px 10px;">{{'ContactUs.Message.Error' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <!-- <div class="content-top-row content-top-row-order-processing ">
+                    <ngx-recaptcha2 #captchaElem  [siteKey]="'6LeOZ4YUAAAAAJ8clQYNtOXNDHsd58KZHyJeILk6'"
+                        [useGlobalDomain]="false" >
+                    </ngx-recaptcha2>
+                </div> -->
+                <button mat-flat-button (click)="AddForm()" [disabled]="!ContactUsForm.valid" color="warn" style="margin-top: 20px;">
+                    {{'ContactUs.Button' | translate}}</button>
+            </form>
+            <div class="post__footer menu" style="margin-top: 80px;">
+                <p class="post__author-updated">
+                    <span class="post__updated">{{'ContactUs.post__updated' | translate}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

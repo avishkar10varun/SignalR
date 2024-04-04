@@ -1,0 +1,30 @@
+/* import all style files */
+
+// helper files
+@import "/src/assets/scss/helpers/variables";
+@import "/src/assets/scss/helpers/mixins";
+@import "/src/assets/scss/helpers/responsive";
+
+@import "/src/assets/scss/helpers/flex";
+
+// base files
+@import "base/reset";
+@import "base/base";
+
+// material files
+@import "material/material-theme-custom";
+@import "material/material-custom";
+
+// utilities
+@import "utilities/utilities";
+
+// components
+@import "components/common";
+@import "components/welcome-page";
+@import "components/menu-card";
+@import "components/table";
+@import "components/breadcrumb";
+@import "components/sidepanel-model";
+@import "components/tree-basic";
+@import "components/chart";
+@import "components/grid";

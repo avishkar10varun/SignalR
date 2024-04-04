@@ -1,0 +1,111 @@
+<div style="background-color: #fff;">
+    <div class="row">
+        <div class="col-4">
+            <img class="UserImag center" src='../../../assets//Images/RoleImage.jfif' />
+        </div>
+        <div class="col-8">
+            <div class="content-top-row content-top-row-order-processing">
+                <mat-form-field
+                  appearence="fill"
+                  class="top-row-first-filed-item top-row-first-filed-item-order-processing "
+                  style="margin:10px 20px 0px 10px;width: 100%;">
+                <mat-label>{{'Roles.SearchForm' | translate}}</mat-label>
+                  <input matInput  name="Search User" (keyup) ="applyFilter($event)"/>
+                </mat-form-field>
+            </div>
+            <div class="content-top-row content-top-row-order-processing" >
+                <div class="example-button-container" style="margin:10px 0px 50px 90%">
+                    <button style="float: left; color: white;"  mat-fab color="accent" aria-label="Example icon button with a bookmark icon" tooltipPosition="top" 
+                    (click)="RolePupup()">{{'Roles.AddButton' | translate}}
+                    </button>
+                </div> 
+            </div>
+            <div style="margin: 20px 30px 0px 20px;">
+            <table mat-table class="basic-table plant-model-table"[dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="Role">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="">
+                        <p class="header-text">{{'Roles.table.Name' | translate}}</p>
+                    </th>
+                    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+                </ng-container>
+                <ng-container matColumnDef="Action" >
+                <th mat-header-cell *matHeaderCellDef mat-sort-header="">
+                    <p class="header-text">{{'Roles.table.Action' | translate}}</p>
+                </th>
+                <td mat-cell *matCellDef="let element" class="row-action-btns-column">
+                    <div class="row-action-btns">
+                    <button mat-icon-button class="edit-btn"  aria-label="Edit Row"
+                            pTooltip="Edit User" tooltipPosition="top" (click)="editRole(element)">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path
+                            d="M0.75 9.06298V11.2505H2.9375L9.38917 4.79881L7.20167 2.61131L0.75 9.06298ZM11.0808 3.10715C11.3083 2.87965 11.3083 2.51215 11.0808 2.28465L9.71583 0.919648C9.48833 0.692148 9.12083 0.692148 8.89333 0.919648L7.82583 1.98715L10.0133 4.17465L11.0808 3.10715Z"
+                            fill="white" />
+                        </svg>
+                    </button>
+                    <button mat-icon-button  class="node-control-btn node-delete" aria-label="delete item"
+                            pTooltip="Delete User" tooltipPosition="top" (click)="deleteRole(element)">
+                            <svg width="8" height="10" viewBox="0 0 8 10" fill="none">
+                            <path
+                                d="M7.35547 0.9375H5.60547L5.10547 0.4375H2.60547L2.10547 0.9375H0.355469V1.9375H7.35547V0.9375ZM0.855469 8.4375C0.855469 8.70272 0.960826 8.95707 1.14836 9.14461C1.3359 9.33214 1.59025 9.4375 1.85547 9.4375H5.85547C6.12069 9.4375 6.37504 9.33214 6.56258 9.14461C6.75011 8.95707 6.85547 8.70272 6.85547 8.4375V2.4375H0.855469V8.4375Z"
+                                fill="white" />
+                            </svg>
+                    </button>
+                    </div>
+                </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayColumn"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayColumn;"></tr>
+                <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4" style="text-align: center;">{{'Roles.table.EmptyResult' | translate}}</td>
+                </tr>
+            </table>
+            <mat-paginator
+                class="basic-paginataor"
+                [pageSizeOptions]="[3, 10, 20]"
+                showFirstLastButtons>
+            </mat-paginator>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #displayRoleModal >
+    <div mat-dialog-title>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="card" style=" width: 100%;background-color: red; color: #fff">
+          <div class="card-header" style="text-align: center;">
+              <h3>{{'Roles.MainHeading' | translate}}</h3>
+          </div>
+      </div>
+      </div>
+    </div>
+    <mat-dialog-content>
+      <form [formGroup]="RoleForm" >
+        <input matInput formControlName="RoleId" name="RoleId" hidden/>
+        <div class="content-top-row content-top-row-order-processing">
+          <mat-form-field 
+              appearence='fill'
+              class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+              style="width: 100%; margin-left: -2px;">
+              <mat-label>{{'Roles.Name.label' | translate}}</mat-label>
+              <input type="text" matInput formControlName="RoleName" name="RoleName" placeholder="{{'Roles.Name.PlaceHolder' | translate}}">
+              <mat-error style="padding: 0px 0px 5px 10px;">{{'Roles.Name.Error' | translate}}</mat-error>
+          </mat-form-field>
+      </div>
+      <div class="content-top-row content-top-row-order-processing" style="margin-top: 60px;">
+        <div class="example-button-container" style="margin-left: 60%;">
+            <button style="margin-right: 10px;"  mat-fab color="accent" aria-label="Example icon button with a bookmark icon" tooltipPosition="top" 
+            [disabled]="!RoleForm.valid" (click)="AddOrEdit()">
+            <i class="fas fa fa-save" style="font-size: 15px; color: #fff;"></i>
+            </button>
+            <button  mat-fab color="warn" aria-label="Example icon button with a bookmark icon" 
+            matTooltip="Cancel " tooltipPosition="top" (click)="BackBtn()">
+                <i [class]="'fa fa-times'"
+                [ngStyle]="{'color': '#fff'}"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </mat-dialog-content>
+  </ng-template>
+  

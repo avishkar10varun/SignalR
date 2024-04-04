@@ -1,0 +1,115 @@
+<div class="row">
+    <label class="lab" style="color: #34c1e8;font-size: 20px;">{{'IndividualForm.Profile.MainHeading' | translate}}</label>
+</div>
+<div class="row">
+    <div class="col-12">
+        <mat-card>
+            <div class="row">
+                <div class="col">
+                    <label class="lab">{{'IndividualForm.Profile.Name' | translate}}</label><br>
+                    <label class="text">{{name}}</label>
+                </div>
+                <div class="col">
+                    <label class="lab">{{'IndividualForm.Profile.Phone' | translate}}</label><br>
+                    <label class="text">{{ phone}}</label>
+                </div>
+                <div class="col">
+                    <label class="lab">{{'IndividualForm.Profile.ICNo' | translate}}</label><br>
+                    <label class="text">{{ newICNo }}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="lab">{{'IndividualForm.Profile.Email' | translate}}</label><br>
+                    <label class="text">{{ email}}</label>
+                </div>
+                <div class="col">
+                    <label class="lab">{{'IndividualForm.Profile.State' | translate}}</label><br>
+                    <label class="text">{{ stateName}}</label>
+                </div>
+                <div class="col">
+                    <label class="lab">{{'IndividualForm.Profile.FinancingAmount' | translate}}</label><br>
+                    <label class="text">{{ financingAmount}}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="lab">{{'IndividualForm.Profile.PurposeofUse' | translate}}</label><br>
+                    <label class="text">{{ purposeofUsageName}}</label>
+                </div>
+                <div class="col">
+                    <label class="lab">{{'IndividualForm.Profile.CreatedBy' | translate}}</label><br>
+                    <label class="text">{{ createdBy}}</label>
+                </div>
+                <div class="col">
+                    <label class="lab">{{'IndividualForm.Profile.CreatedOn' | translate}}</label><br>
+                    <label class="text">{{ createdOn | date:'shortDate'}}</label>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<div class="row" >
+    <div class=" col-4" >
+        <mat-card>
+            <div class="row">
+                <mat-card style="width: 100%; height: 100%;">
+                    <label class="lab" style="color: #34c1e8;">Latest 3 Months Pay Slip</label>
+                </mat-card>
+            </div>
+            <div class="row">
+                <mat-card style="width: 100%; height: 100%;">
+                    <img src="{{PaySlipOne}}" style="width: 100%; height: 90%;">
+                </mat-card>
+            </div>
+            <div class="row">
+                <mat-card style="width: 100%; height: 100%;">
+                    <img src="{{PaySlipTwo}}" style="width: 100%; height: 90%;">
+                </mat-card>
+            </div>
+            <div class="row">
+                <mat-card style="width: 100%; height: 100%;">
+                    <img src="{{PaySlipThree}}" style="width: 100%; height: 90%;">
+                </mat-card>
+            </div>
+        </mat-card>
+    </div>
+    <div class=" col-8" >
+            <div class="row ImageRow">
+                <div class="col">
+                    <mat-card style="width: 100%; height: 100%;">
+                        <h6>{{'IndividualForm.Profile.KadICFront' | translate}}</h6>
+                        <img src="{{ kadICFront}}" style="width: 100%; height: 90%;">
+                    </mat-card>
+                </div>
+                <div class="col">
+                    <mat-card style="width: 100%; height: 100%;">
+                        <h6>{{'IndividualForm.Profile.KadICBack' | translate}}</h6>
+                        <img src="{{ kadICBack}}" style="width: 100%; height: 90%;">
+                    </mat-card>
+                </div>
+            </div>
+            <div class="row ImageRow">
+                <div class="col">
+                    <mat-card style="width: 100%; height: 100%;">
+                        <h6>{{'IndividualForm.Profile.BankStatementMonth' | translate}}</h6>
+                        <img src="{{ bankStatementMonth}}" style="width: 100%; height: 90%;">
+                    </mat-card>
+                </div>
+                <div class="col">
+                    <mat-card>
+                        <h6>{{'IndividualForm.Profile.LatestEPF' | translate}} </h6>
+                        <img src="{{ latestEPF}}" style="width: 100%; height: 100%;">
+                    </mat-card>
+                </div>
+            </div>
+            <div class="row ImageRow" style="margin-bottom: 50px;">
+                <div class="col">
+                    <mat-card style="width: 100%; height: 100%;">
+                        <h6>{{'IndividualForm.Profile.Bill_File' | translate}}</h6>
+                        <img src="{{ bill_File}}" style="width: 100%; height: 90%;">
+                    </mat-card>
+                </div>
+            </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+.d3-chart text{
+    fill: black;
+    font: 10px sans-serif;
+    /*text-anchor: end;*/
+}
+.d3-chart .axis text {
+    font: 10px sans-serif;
+}
+.d3-chart .axis path, .axis line {
+    fill: none;
+    /*stroke: #fff;*/
+    shape-rendering: crispEdges;
+}
+.d3-chart path {
+    stroke: steelblue !important;
+    stroke-width: 2 !important;
+    fill: none !important;
+  }
+  .item a {
+      width: 20px;
+  }
+  

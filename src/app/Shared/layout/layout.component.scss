@@ -1,0 +1,33 @@
+.wrapper .header{
+     z-index: 1000;
+     background: #FF0000;
+     position: fixed;
+     width: calc(100% - 0%);
+     height: 70px;
+     display: flex;
+     top: 0;
+}
+
+.wrapper .main-container{
+    width: calc(100% - 0%);
+    margin-top: 72px;
+    position:relative;
+}
+.wrapper .footer{
+    background-color: #202525;
+    color: #fff;
+    width: 100%;
+    height: 430px;
+    
+}
+
+.whatsAppImg{
+    width: 20px;
+    height: 20px;
+    z-index: 1001;
+}
+
+
+
+
+

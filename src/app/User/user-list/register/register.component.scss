@@ -1,0 +1,13 @@
+.mat-form-field{
+    background-color: white;
+    color: black;
+    border:1px solid #e8eaef;
+    text-decoration: none;
+    border-radius: 10px;
+    height: 50px;
+    padding-left: 0px;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}

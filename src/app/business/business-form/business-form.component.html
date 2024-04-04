@@ -1,0 +1,161 @@
+<div class="container">
+    <h2 class="align-center">{{'Business.title' | translate}}</h2>
+    <div class="Process-flow">
+        <img src='../../../assets/Images/BankCreditCardProcess.png' />
+    </div>
+    <div class="row row-dt">
+        <div class="col-lg-7 col-md-12 form-data">
+            <form [formGroup]="BusinessLoanFrom">
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <mat-label>{{'Business.FinancingAmount.label' | translate}}</mat-label>
+                        <input type="number" matInput (keypress)="keyPressNumbers($event)" formControlName="FinancingAmount"  placeholder="{{'Business.FinancingAmount.PlaceHolder' | translate}}">
+                        <mat-error style="padding: 0px 0px 5px 10px;">{{'Business.FinancingAmount.Error' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <input type="text" matInput  placeholder="{{'Business.Product.PlaceHolder' | translate}}" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <mat-label>{{'Business.PurposeofUsageId.label' | translate}}</mat-label>
+                        <mat-select  formControlName="PurposeofUsageId">
+                            <mat-option style="text-align: center;">{{'Business.PurposeofUsageId.Option' | translate}}</mat-option>
+                            <mat-option *ngFor="let p of PurposeDDL" [value]="p.value">{{p.text}} </mat-option>
+                        </mat-select>
+                        <mat-error>{{'Business.PurposeofUsageId.Error' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <mat-label>{{'Business.CompanyName.label' | translate}}</mat-label>
+                        <input type="text" matInput formControlName="CompanyName"
+                            placeholder="{{'Business.CompanyName.PlaceHolder' | translate}}">
+                        <mat-error style="padding: 0px 0px 5px 10px;">{{'Business.CompanyName.Error.required' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <mat-label>{{'Business.CompanyRegNo.label' | translate}}</mat-label>
+                        <input type="number" formControlName="CompanyRegNo" matInput
+                            placeholder="{{'Business.CompanyRegNo.PlaceHolder' | translate}}">
+                        <mat-error style="padding: 0px 0px 5px 10px;">{{'Business.CompanyRegNo.Error.required' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <mat-label>{{'Business.Email.label' | translate}}</mat-label>
+                        <input type="email" formControlName="Email" matInput  placeholder="{{'Business.Email.PlaceHolder' | translate}}">
+                        <mat-error *ngIf="this.BusinessLoanFrom.get('Email').hasError('required')">{{'Business.Email.Error.required' | translate}}</mat-error>
+                        <mat-error *ngIf="this.BusinessLoanFrom.get('Email').hasError('pattern')">{{'Business.Email.Error.pattern' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <mat-label>{{'Business.Phone.label' | translate}}</mat-label>
+                        <input type="number" formControlName="Phone" matInput  placeholder="{{'Business.Phone.PlaceHolder' | translate}}">
+                        <mat-error style="padding: 0px 0px 5px 10px;">{{'Business.Phone.Error' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="content-top-row content-top-row-order-processing ">
+                    <mat-form-field appearence='fill'
+                        class="top-row-first-filed-item top-row-first-filed-item-order-processing"
+                        style="width: 100%;margin-right: 10px;">
+                        <mat-label>{{'Business.StateId.label' | translate}}</mat-label>
+                        <mat-select formControlName="StateId">
+                            <mat-option style="text-align: center;">{{'Business.StateId.Option' | translate}}</mat-option>
+                            <mat-option *ngFor="let s of StateDDL" [value]="s.value"> {{s.text}} </mat-option>
+                        </mat-select>
+                        <mat-error>{{'Business.StateId.Error' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <!-- <div class="content-top-row content-top-row-order-processing">
+                    <mat-form-field class="top-row-first-filed-item top-row-first-filed-item-order-processing "
+                        style="width: 100%; height: 100px;margin-right: 10px;">
+                        <textarea formControlName="Notes" matInput placeholder="Notes" rows="8"
+                            style="resize: none;"></textarea>
+                        <mat-error style="padding: 0px 0px 5px 10px;">Address is required.</mat-error>
+                    </mat-form-field>
+                </div> -->
+                
+                  <button mat-flat-button color="warn" class="submitBtn" style="margin-top: 50px;" (click)="SubmitForm()" [disabled]="!BusinessLoanFrom.valid">{{'Business.Button' | translate}}</button>
+            </form>
+              <h3>{{'Business.Notes.Title' | translate}}</h3>
+              <h6 style="margin-top: 20px;">{{'Business.Notes_p' | translate}}</h6>
+              <ol>
+                  <li>{{'Business.Notes_p.ol.li.1' | translate}}</li>
+                  <li>{{'Business.Notes_p.ol.li.2' | translate}}</li>
+                  <li>{{'Business.Notes_p.ol.li.3' | translate}}</li>
+                  <li>{{'Business.Notes_p.ol.li.4' | translate}}</li>
+                  <li>{{'Business.Notes_p.ol.li.5' | translate}}</li>
+                  <li>{{'Business.Notes_p.ol.li.6' | translate}}</li>
+                  <li>{{'Business.Notes_p.ol.li.7' | translate}}</li>
+              </ol>
+        </div>
+        <div class="col-lg-5 col-md-12">
+            <!-- <div class="sidebar sidebar--calculators">
+                 <div class="widget calculator calculator--payment-simulation" id="payment-simulation">
+                     <h3 class="section__title">{{'Business.PaymentSimulation.Title' | translate}}</h3>
+                     <div class="calculator__form">
+                             <form >  
+                             <div class="reset-value" title="reset">{{'Business.PaymentSimulation.ResetButton' | translate}}</div>    
+                             <table>
+                                 <tbody>
+                                    <tr> 
+                                     <td class="calculator__label">{{'Business.PaymentSimulation.calculator_label_1' | translate}}</td>
+                                     <td class="calculator__value">
+                                         <input id="loan-amount" type="number" name="loan-amount" value=""  min="1000" max="50000" step="50" placeholder="1,000 - 50,000">
+                                         <div class="alert--message range">{{'Business.PaymentSimulation.calculator_Range' | translate}}</div>
+                                         <div class="alert--message required">{{'Business.PaymentSimulation.calculator_Required' | translate}}</div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td class="calculator__label">{{'Business.PaymentSimulation.calculator_label_2' | translate}}</td>
+                                     <td class="calculator__value">
+                                         <input readonly="" id="interest-rate" type="text" name="interest-rate" value="18" class="validate[required]" required="">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td class="calculator__label">{{'Business.PaymentSimulation.calculator_label_3' | translate}}</td>
+                                     <td class="calculator__value range">
+                                       
+                                    </td>
+                                 </tr>
+                             </tbody></table>
+                             <div class="calculator__action">
+                                 <button type="button" value="Calculate" class="button button--l immediate-calc">
+                                    {{'Business.PaymentSimulation.calculatorBtn' | translate}}
+                                 </button>
+                             </div>
+             
+             
+                             <div class="calculator__monrepay">
+                                 <div class="calculator__monrepay--wrapper">
+                                     <div class="calculator__monrepay--title"> {{'Business.calculator_monrepay_Title' | translate}}</div>                  
+                                     <div class="calculator__monrepay--value"></div> 
+                                 </div>
+                                 <button type="submit" value="Diagnose" class="button button--l">{{'Business.calculator_monrepay_Detail' | translate}}</button>
+                             </div>
+                          </form>
+                     </div>
+                 </div>
+             </div> -->
+        </div>
+    </div>
+</div>

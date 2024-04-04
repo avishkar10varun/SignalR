@@ -1,0 +1,36 @@
+﻿  /* ---- Inquire Now button for Mobile View------- */
+  #inqMobile {
+    display: none;
+  }
+
+  @media (max-width: 991px) {
+    #inqMobile {
+        display: inline-block;
+        /* border: 1px solid black; */
+        margin: 15px 22px 15px 30px;
+        /* Adjust the right margin later */
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 40px
+    }
+
+
+    #inqMobile > .menu-button > a {
+        height: 40px;   
+        background:  #ff0000 !important;
+        border-radius: 70px;
+        color: white !important;
+        text-align: center;
+        line-height: 40px;
+        display:flex;
+        justify-content: flex-end;
+    }
+}
+
+#header.red #inqMobile > .menu-button > a {
+    background:  white !important;   
+    color:#ff0000 !important;
+   
+}
+
+  /* ---- Inquire Now button for Mobile View------- */

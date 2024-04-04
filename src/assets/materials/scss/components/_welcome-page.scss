@@ -1,0 +1,34 @@
+.welcome-page {
+  display: flex;
+  .welcome-content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 45px 50px;
+  }
+  .welcome-top-bar {
+    .btn-base {
+      margin-right: 10px;
+    }
+  }
+  .welcome-form-area {
+    max-width: 455px;
+    width: 100%;
+    margin: auto;
+    .alert {
+      margin-top: 10px;
+    }
+  }
+  .welcome-title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 45px;
+    color: #0f0fd1;
+    margin-bottom: 20px;
+  }
+  &.login-page {
+    .welcome-banner {
+      background-image: url("/assets/materials/images/login-banner.png");
+    }
+  }
+}

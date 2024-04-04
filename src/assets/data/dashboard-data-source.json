@@ -1,0 +1,7 @@
+[
+  { "itemID": 1, "dueDate": "28 Nov 2020","status": "inProgress", "title":"Lorem at nec sed eros velit","assignee": "Daniel Powell", "assigneeIcon":"assets/images/order-processing-daniel-powell.png","flagIcon":"assets/images/green-flag-icon.png","taskTitle":"assets/images/myTask-title-icon.svg"  },
+  { "itemID": 2, "dueDate": "28 Nov 2020","status": "inProgress", "title":"Lorem at nec sed eros velit","assignee": "Martha Robins", "assigneeIcon":"assets/images/order-processing-martha -robins.png","flagIcon":"assets/images/orange-flag-icon.svg","taskTitle":"assets/images/myTask-title-icon.svg"  },
+  { "itemID": 3, "dueDate": "28 Nov 2020","status": "overdue", "title":"Lorem at nec sed eros velit","assignee": "Mark Coleman", "assigneeIcon":"assets/images/order-processing-mark-coleman.png","flagIcon":"assets/images/red-flag-icon.svg","taskTitle":"assets/images/myTask-title-icon.svg"  },
+  { "itemID": 4, "dueDate": "28 Nov 2020","status": "done", "title":"Lorem at nec sed eros velit","assignee": "Joseph Walker", "assigneeIcon":"assets/images/order-processing-joseph-walker.png","flagIcon":"assets/images/green-status-up-icon.svg","taskTitle":"assets/images/myTask-title-icon.svg"  },
+  { "itemID": 5, "dueDate": "28 Nov 2020","status": "overdue", "title":"Lorem at nec sed eros velit","assignee": "Mark Coleman", "assigneeIcon":"assets/images/order-processing-mark.png","flagIcon":"assets/images/red-flag-icon.svg","taskTitle":"assets/images/myTask-title-icon.svg"  }
+]
